@@ -11,6 +11,7 @@
     <title> BoolZapp </title>
 </head>
 <body>
+    <div id="root">
     <!-- wrapper -->
     <div id="wrapper">
         <!-- header -->
@@ -18,40 +19,102 @@
             <div id="header">
                 <div id="containerHeaderLeft">
                     <!-- user profile -->
-                    <div class="userPofile">
-
+                    <div class="userProfile">
+                        <div class="userProfileLeft float-left">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a href="#"> <img src="img/avatar_io.jpg" class="userImg float-left" alt="image io"></a>
+                                        <a href="#"> <h3 class="titleProfile float-left"> Paolo Dossetto </h3></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="userProfileRight float-left">
+                            <div class="toolsProfile">
+                                <div class="strumenti"> <i class="fas fa-circle-notch"></i><i class="fas fa-comment-alt"></i><i class="fas fa-ellipsis-v"></i></div>
+                            </div>
+                        </div>
                     </div>
                     <!-- fine user profile -->
 
                     <!-- notifications -->
                     <div class="notifications">
-
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#"> <i class="fas fa-bell-slash bell float-left"></i></a>
+                                    <a href="#"> <h3 class="titleNotifications float-left"> Ricevi notifiche di nuovi messaggi </h3></a>
+                                    <a href="#"> <h4 class="notificationsDesktop float-left"> Ultimo accesso oggi alle </h4></a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                     <!-- fine notifications -->
 
                     <!-- search chat -->
                     <div class="searchChat">
-
+                        <input type="text" v-model="newTodo" placeholder=" Cerca o inizia una nuova chat" @keyUp.enter="addToDo">
                     </div>
                     <!-- fine search chat -->
 
                     <!-- chat contacts -->
                     <div class="chatContacts">
-
+                        <ul>
+                            <li>
+                                <a href="#"> <img src="img/avatar_1.jpg" class="friendImg float-left" alt="image io"></a>
+                                <a href="#"> <h3 class="titleContacts float-left"> Michele </h3></a>
+                            </li>
+                            <li>
+                                <a href="#"> <img src="img/avatar_2.jpg" class="friendImg float-left" alt="image io"></a>
+                                <a href="#"> <h3 class="titleContacts float-left"> Fabio </h3></a>
+                            </li>
+                            <li>
+                                <a href="#"> <img src="img/avatar_3.jpg" class="friendImg float-left" alt="image io"></a>
+                                <a href="#"> <h3 class="titleContacts float-left"> Samuele </h3></a>
+                            </li>
+                            <li>
+                                <a href="#"> <img src="img/avatar_4.jpg" class="friendImg float-left" alt="image io"></a>
+                                <a href="#"> <h3 class="titleContacts float-left"> Luisa </h3></a>
+                            </li>
+                        </ul>
                     </div>
                     <!-- fine chat contacts -->
+
+                    <!-- chat contacts PROVA -->
+                    <!-- <div class="chatContacts">
+                        <ul v-if="contacts.length > 0">
+                            <li v-for=" (photo, index) in photos">  
+                                <img :src="photos">
+                                {{ contact.name }} 
+                            </li>
+
+                            <li v-for=" (contact, index) in contacts">  
+                                {{ contact.name }}  
+                            </li>
+                        </ul>
+                    </div> -->
+                    <!-- fine chat contacts PROVA -->
                 </div>
                 <div id="containerHeaderRight">
                     <!-- chat Up -->
                     <div class="chatUp">
                         <!-- user friend -->
                         <div class="userFriend">
-
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a href="#"> <img src="img/avatar_1.jpg" class="userImg float-left" alt="image 1"></a>
+                                        <a href="#"> <h3 class="titleFriend float-left"> Michele </h3></a>
+                                        <a href="#"> <h4 class="access float-left"> Ultimo accesso oggi alle </h4></a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                         <!-- fine user friend -->
                         <!-- tools -->
-                        <div class="tools">
-                            
+                        <div class="toolsChat">
+                            <div class="strumenti"> <i class="fas fa-search"></i><i class="fas fa-paperclip"></i><i class="fas fa-ellipsis-v"></i></div>
                         </div>
                         <!-- fine tools -->
                     </div>
@@ -61,7 +124,7 @@
                     <div class="chatCenter">
                         <!-- chat -->
                         <div class="chat">
-
+                            <img class="imgMine" src="img/mine.jpg" alt="">
                         </div>
                         <!-- fine chat -->
                     </div>
@@ -71,17 +134,17 @@
                     <div class="chatDown">
                         <!-- smile -->
                         <div class="smile">
-
+                            <div class="strumenti"> <i class="fas fa-smile"></i></div>
                         </div>
                         <!-- fine smile -->
                         <!-- write Message -->
                         <div class="writeMessage">
-
+                            <input type="text" v-model="newTodo" placeholder=" Scrvi un messaggio" @keyUp.enter="addToDo">
                         </div>
                         <!-- fine write Message -->
                         <!-- microphone -->
                         <div class="microphone">
-                            
+                            <div class="strumenti"> <i class="fas fa-microphone"></i></div>
                         </div>
                         <!-- fine microphone -->
                     </div>
@@ -97,6 +160,7 @@
         <!-- fine main -->
     </div>
     <!--  fine wrapper -->
+</div>
 
 
     <!-- vue js -->

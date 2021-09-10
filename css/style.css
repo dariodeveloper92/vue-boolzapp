@@ -15,6 +15,79 @@ body {
     background-color: black;
 }
 
+.userImg {
+    width: 70px;
+    height: 100%;
+    vertical-align: middle;
+    padding: 5px;
+    border-radius: 40px;
+}
+
+.friendImg {
+    width: 70px;
+    vertical-align: middle;
+    padding: 5px;
+    border-radius: 40px;
+}
+
+.titleProfile {
+    width: 40%;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.titleFriend,
+.titleContacts {
+    width: 40%;
+    height: 100%;
+    padding: 10px 0;
+}
+
+.titleFriend {
+    padding: 10px 15px;
+}
+
+.titleNotifications {
+    width: 80%;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.notificationsDesktop {
+    color: gray;
+    width: 80%;
+    height: 100%;
+    text-decoration-color: 5px gray;
+    padding: 0 10px;
+    
+}
+
+.access {
+    color: gray;
+    width: 60%;
+    height: 100%;
+    padding: 0 15px;
+}
+
+.float-left {
+    float: left;
+}
+
+.strumenti {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+    padding: 20px 0;
+    color: gray;
+}
+
+input {
+    width: 95%;
+    height: 30px;
+    border: 1px solid black
+}
+
 /*  fine common -----------------*/
 
 /* header -----------------------*/
@@ -56,29 +129,60 @@ main  {
     margin: 20px 0;
 }
 
-.userPofile {
+.userProfile {
     height: 10%;
     width: 100%;
     background-color: pink;
+    /* display: flex;
+    justify-content: center;
+    align-content: center; */
+}
+
+.userProfileLeft{
+    height: 100%;
+    width: 80%;
+    background-color: #E5DDD5;
+}
+
+.userProfileRight{
+    height: 100%;
+    width: 20%;
+}
+
+.toolsProfile {
+    height: 100%;
+    width: 100%;
+    background-color: #E5DDD5;
 }
 
 .notifications {
     height: 10%;
     width: 100%;
-    background-color: green;
+    background-color: #9DE1FE;
+    padding: 10px 10px;
 }
 
 .searchChat {
     height: 7%;
     width: 100%;
-    background-color: lightblue;
+    background-color: #F6F6F6;
+    display: flex;
+    justify-content: center;
 }
 
 .chatContacts {
     height: 73%;
     width: 100%;
-    background-color: white;
+    background-color: #F5F5F5;
     overflow-y: scroll;
+    display: flex;
+}
+
+.bell {
+    border-radius: 50px;
+    background-color: white;
+    color: #9DE1FE;
+    font-size: 45px;
 }
 /* fine containerHeaderLeft -------------------*/
 
@@ -103,13 +207,13 @@ main  {
 .userFriend {
     height: 100%;
     width: 80%;
-    background-color: blue;
+    background-color: #E5DDD5;
 }
 
-.tools {
+.toolsChat {
     height: 100%;
     width: 20%;
-    background-color: gray;
+    background-color: #E5DDD5;
 }
 /* fine chat Up -----------*/
 
@@ -123,36 +227,38 @@ main  {
 .chat {
     height: 100%;
     width: 100%;
-    background-color: purple;
     overflow-y: scroll;
 }
+
+.imgMine {
+    width: 100%;
+    height: 100%;
+}
+
 /* fine chat center ----------*/
 
 /* chat down ----------------*/
 .chatDown {
     height: 10%;
     width: 100%;
-    background-color: rgb(126, 128, 0);
+    background-color: #F0F0F0;
     display: flex;
     justify-content: center;
-}
-
-.smile {
-    height: 100%;
-    width: 20%;
-    background-color: goldenrod;
 }
 
 .writeMessage {
     height: 100%;
     width: 60%;
-    background-color: rgb(14, 167, 0);
+    background-color: #E5DDD5;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
 }
-
+.smile,
 .microphone {
     height: 100%;
     width: 20%;
-    background-color: greenyellow;
+    background-color: #E5DDD5;
 }
 /* chat down ---------------*/
 /* fine containerHeaderRight ------------------*/
