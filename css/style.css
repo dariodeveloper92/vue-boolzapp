@@ -4,3 +4,155 @@
     box-sizing: border-box;
 }
 
+/* common -----------------------*/
+body {
+    min-width: 500px;
+}
+
+#wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+/*  fine common -----------------*/
+
+/* header -----------------------*/
+header {
+    width: 100%;
+    height: 100%;
+}
+
+#header {
+    width: 100%;
+    height: 18vh ;
+    background-color: #009688;
+    display: flex;
+    justify-content: center;
+}
+/* fine header ----------------*/
+
+/* main -----------------------*/
+main  {
+    width: 100%;
+    height: 100% ;
+}
+
+#main  {
+    width: 100%;
+    height: 80vh ;
+    background-color: #D8DBD6;
+    display: flex;
+    justify-content: space-around;
+}
+/* fine main -----------------*/
+
+/* containerHeaderLeft -----------------------*/
+
+#containerHeaderLeft {
+    height: 90vh;
+    width: 40%;
+    background-color: yellow;
+    margin: 20px 0;
+}
+
+.userPofile {
+    height: 10%;
+    width: 100%;
+    background-color: pink;
+}
+
+.notifications {
+    height: 10%;
+    width: 100%;
+    background-color: green;
+}
+
+.searchChat {
+    height: 7%;
+    width: 100%;
+    background-color: lightblue;
+}
+
+.chatContacts {
+    height: 73%;
+    width: 100%;
+    background-color: white;
+    overflow-y: scroll;
+}
+/* fine containerHeaderLeft -------------------*/
+
+/* containerHeaderRight -----------------------*/
+
+#containerHeaderRight {
+    height: 90vh;
+    width: 40%;
+    background-color: red;
+    margin: 20px 0;
+}
+
+/* chat Up ----------------*/
+.chatUp {
+    height: 10%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.userFriend {
+    height: 100%;
+    width: 80%;
+    background-color: blue;
+}
+
+.tools {
+    height: 100%;
+    width: 20%;
+    background-color: gray;
+}
+/* fine chat Up -----------*/
+
+/* chat center ----------------*/
+.chatCenter {
+    height: 80%;
+    width: 100%;
+    /* background-color: purple; */
+}
+
+.chat {
+    height: 100%;
+    width: 100%;
+    background-color: purple;
+    overflow-y: scroll;
+}
+/* fine chat center ----------*/
+
+/* chat down ----------------*/
+.chatDown {
+    height: 10%;
+    width: 100%;
+    background-color: rgb(126, 128, 0);
+    display: flex;
+    justify-content: center;
+}
+
+.smile {
+    height: 100%;
+    width: 20%;
+    background-color: goldenrod;
+}
+
+.writeMessage {
+    height: 100%;
+    width: 60%;
+    background-color: rgb(14, 167, 0);
+}
+
+.microphone {
+    height: 100%;
+    width: 20%;
+    background-color: greenyellow;
+}
+/* chat down ---------------*/
+/* fine containerHeaderRight ------------------*/
