@@ -5,7 +5,7 @@ Vue.config.devtools = true; // scrivere per attivare l'estenzione sul browser
 const app = new Vue({
     el: '#root',
     data: {
-        newTodo: '',
+        chat: '',
         photos: [
             'img/avatar_1.jpg',
             'img/avatar_2.jpg',

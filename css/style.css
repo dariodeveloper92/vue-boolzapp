@@ -7,6 +7,7 @@
 /* common -----------------------*/
 body {
     min-width: 500px;
+    font-family: 'Lato', sans-serif;
 }
 
 #wrapper{
@@ -30,20 +31,22 @@ body {
     border-radius: 40px;
 }
 
+/* title ------------*/
 .titleProfile {
     width: 40%;
     height: 100%;
     padding: 20px 0;
 }
 
-.titleFriend,
 .titleContacts {
-    width: 40%;
+    width: 80%;
     height: 100%;
-    padding: 10px 0;
+    padding: 20px 10px;
 }
 
 .titleFriend {
+    width: 40%;
+    height: 100%;
     padding: 10px 15px;
 }
 
@@ -52,6 +55,7 @@ body {
     height: 100%;
     padding: 0 10px;
 }
+/* Fine title -----*/
 
 .notificationsDesktop {
     color: gray;
@@ -88,6 +92,9 @@ input {
     border: 1px solid black
 }
 
+.black {
+    color: black;
+}
 /*  fine common -----------------*/
 
 /* header -----------------------*/
@@ -167,7 +174,7 @@ main  {
     width: 100%;
     background-color: #F6F6F6;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .chatContacts {
@@ -175,7 +182,6 @@ main  {
     width: 100%;
     background-color: #F5F5F5;
     overflow-y: scroll;
-    display: flex;
 }
 
 .bell {

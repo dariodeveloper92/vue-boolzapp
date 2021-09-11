@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- link icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css -->
@@ -12,155 +14,117 @@
 </head>
 <body>
     <div id="root">
-    <!-- wrapper -->
-    <div id="wrapper">
-        <!-- header -->
-        <header>
-            <div id="header">
-                <div id="containerHeaderLeft">
-                    <!-- user profile -->
-                    <div class="userProfile">
-                        <div class="userProfileLeft float-left">
-                            <nav>
+        <!-- wrapper -->
+        <div id="wrapper">
+            <!-- header -->
+            <header>
+                <div id="header">
+                    <div id="containerHeaderLeft">
+                        <!-- user profile -->
+                        <div class="userProfile">
+                            <div class="userProfileLeft float-left">
                                 <ul>
                                     <li>
                                         <a href="#"> <img src="img/avatar_io.jpg" class="userImg float-left" alt="image io"></a>
-                                        <a href="#"> <h3 class="titleProfile float-left"> Paolo Dossetto </h3></a>
+                                        <a href="#"> <h3 class="titleProfile float-left black"> Paolo Dossetto </h3></a>
                                     </li>
                                 </ul>
-                            </nav>
-                        </div>
-                        <div class="userProfileRight float-left">
-                            <div class="toolsProfile">
-                                <div class="strumenti"> <i class="fas fa-circle-notch"></i><i class="fas fa-comment-alt"></i><i class="fas fa-ellipsis-v"></i></div>
+                            </div>
+                            <div class="userProfileRight float-left">
+                                <div class="toolsProfile">
+                                    <div class="strumenti"> <i class="fas fa-circle-notch"></i><i class="fas fa-comment-alt"></i><i class="fas fa-ellipsis-v"></i></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- fine user profile -->
-
-                    <!-- notifications -->
-                    <div class="notifications">
-                        <nav>
+                        <!-- fine user profile -->
+                        <!-- notifications -->
+                        <div class="notifications">
                             <ul>
                                 <li>
                                     <a href="#"> <i class="fas fa-bell-slash bell float-left"></i></a>
-                                    <a href="#"> <h3 class="titleNotifications float-left"> Ricevi notifiche di nuovi messaggi </h3></a>
+                                    <a href="#"> <h3 class="titleNotifications float-left black"> Ricevi notifiche di nuovi messaggi </h3></a>
                                     <a href="#"> <h4 class="notificationsDesktop float-left"> Ultimo accesso oggi alle </h4></a>
                                 </li>
                             </ul>
-                        </nav>
+                        </div>
+                        <!-- fine notifications -->
+                        <!-- search chat -->
+                        <div class="searchChat">
+                            <input type="text" v-model="chat" placeholder=" Cerca o inizia una nuova chat" @keyUp.enter="addToDo">
+                        </div>
+                        <!-- fine search chat -->
+                        <!-- chat contacts -->
+                        <div class="chatContacts">
+                            <ul v-if="photos.length > 0">
+                                <li v-for="(contact, index) in contacts" class="titleContacts friendImg black">
+                                    <img :src="photos.length">
+                                    {{ contact.name }}
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- fine chat contacts -->
                     </div>
-                    <!-- fine notifications -->
-
-                    <!-- search chat -->
-                    <div class="searchChat">
-                        <input type="text" v-model="newTodo" placeholder=" Cerca o inizia una nuova chat" @keyUp.enter="addToDo">
-                    </div>
-                    <!-- fine search chat -->
-
-                    <!-- chat contacts -->
-                    <div class="chatContacts">
-                        <ul>
-                            <li>
-                                <a href="#"> <img src="img/avatar_1.jpg" class="friendImg float-left" alt="image io"></a>
-                                <a href="#"> <h3 class="titleContacts float-left"> Michele </h3></a>
-                            </li>
-                            <li>
-                                <a href="#"> <img src="img/avatar_2.jpg" class="friendImg float-left" alt="image io"></a>
-                                <a href="#"> <h3 class="titleContacts float-left"> Fabio </h3></a>
-                            </li>
-                            <li>
-                                <a href="#"> <img src="img/avatar_3.jpg" class="friendImg float-left" alt="image io"></a>
-                                <a href="#"> <h3 class="titleContacts float-left"> Samuele </h3></a>
-                            </li>
-                            <li>
-                                <a href="#"> <img src="img/avatar_4.jpg" class="friendImg float-left" alt="image io"></a>
-                                <a href="#"> <h3 class="titleContacts float-left"> Luisa </h3></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- fine chat contacts -->
-
-                    <!-- chat contacts PROVA -->
-                    <!-- <div class="chatContacts">
-                        <ul v-if="contacts.length > 0">
-                            <li v-for=" (photo, index) in photos">  
-                                <img :src="photos">
-                                {{ contact.name }} 
-                            </li>
-
-                            <li v-for=" (contact, index) in contacts">  
-                                {{ contact.name }}  
-                            </li>
-                        </ul>
-                    </div> -->
-                    <!-- fine chat contacts PROVA -->
-                </div>
-                <div id="containerHeaderRight">
-                    <!-- chat Up -->
-                    <div class="chatUp">
-                        <!-- user friend -->
-                        <div class="userFriend">
-                            <nav>
+                    <div id="containerHeaderRight">
+                        <!-- chat UP -->
+                        <div class="chatUp">
+                            <!-- user friend -->
+                            <div class="userFriend">
                                 <ul>
                                     <li>
                                         <a href="#"> <img src="img/avatar_1.jpg" class="userImg float-left" alt="image 1"></a>
-                                        <a href="#"> <h3 class="titleFriend float-left"> Michele </h3></a>
+                                        <a href="#"> <h3 class="titleFriend float-left black"> Michele </h3></a>
                                         <a href="#"> <h4 class="access float-left"> Ultimo accesso oggi alle </h4></a>
                                     </li>
                                 </ul>
-                            </nav>
+                            </div>
+                            <!-- fine user friend -->
+                            <!-- tools -->
+                            <div class="toolsChat">
+                                <div class="strumenti"> <i class="fas fa-search"></i><i class="fas fa-paperclip"></i><i class="fas fa-ellipsis-v"></i></div>
+                            </div>
+                            <!-- fine tools -->
                         </div>
-                        <!-- fine user friend -->
-                        <!-- tools -->
-                        <div class="toolsChat">
-                            <div class="strumenti"> <i class="fas fa-search"></i><i class="fas fa-paperclip"></i><i class="fas fa-ellipsis-v"></i></div>
+                        <!-- fine chat UP -->
+                        <!-- chat CENTER -->
+                        <div class="chatCenter">
+                            <!-- chat -->
+                            <div class="chat">
+                                <img class="imgMine" src="img/mine.jpg" alt="">
+                            </div>
+                            <!-- fine chat -->
                         </div>
-                        <!-- fine tools -->
+                        <!-- fine chat CENTER -->
+                        <!-- chat DOWN -->
+                        <div class="chatDown">
+                            <!-- smile -->
+                            <div class="smile">
+                                <div class="strumenti"> <i class="fas fa-smile"></i></div>
+                            </div>
+                            <!-- fine smile -->
+                            <!-- write Message -->
+                            <div class="writeMessage">
+                                <input type="text" v-model="chat" placeholder=" Scrvi un messaggio" @keyUp.enter="addToDo">
+                            </div>
+                            <!-- fine write Message -->
+                            <!-- microphone -->
+                            <div class="microphone">
+                                <div class="strumenti"> <i class="fas fa-microphone"></i></div>
+                            </div>
+                            <!-- fine microphone -->
+                        </div>
+                        <!-- fine chat DOWN -->
                     </div>
-                    <!-- fine cha Up -->
-
-                    <!-- chat center -->
-                    <div class="chatCenter">
-                        <!-- chat -->
-                        <div class="chat">
-                            <img class="imgMine" src="img/mine.jpg" alt="">
-                        </div>
-                        <!-- fine chat -->
-                    </div>
-                    <!-- fine cha center -->
-
-                    <!-- chat down -->
-                    <div class="chatDown">
-                        <!-- smile -->
-                        <div class="smile">
-                            <div class="strumenti"> <i class="fas fa-smile"></i></div>
-                        </div>
-                        <!-- fine smile -->
-                        <!-- write Message -->
-                        <div class="writeMessage">
-                            <input type="text" v-model="newTodo" placeholder=" Scrvi un messaggio" @keyUp.enter="addToDo">
-                        </div>
-                        <!-- fine write Message -->
-                        <!-- microphone -->
-                        <div class="microphone">
-                            <div class="strumenti"> <i class="fas fa-microphone"></i></div>
-                        </div>
-                        <!-- fine microphone -->
-                    </div>
-                    <!-- fine cha down -->
                 </div>
-            </div>
-        </header>
-        <!-- fine header -->
-        <!-- main -->
-        <main>
-            <div id="main"></div>
-        </main>
-        <!-- fine main -->
+            </header>
+            <!-- fine header -->
+            <!-- main -->
+            <main>
+                <div id="main"></div>
+            </main>
+            <!-- fine main -->
+        </div>
+        <!--  fine wrapper -->
     </div>
-    <!--  fine wrapper -->
-</div>
 
 
     <!-- vue js -->
