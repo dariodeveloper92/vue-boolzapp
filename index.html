@@ -50,7 +50,7 @@
                         <!-- fine notifications -->
                         <!-- search chat -->
                         <div class="searchChat">
-                            <input type="text" v-model="chat" placeholder=" Cerca o inizia una nuova chat" @keyUp.enter="addToDo">
+                            <input type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat">
                         </div>
                         <!-- fine search chat -->
                         <!-- chat contacts -->
@@ -88,9 +88,18 @@
                         <!-- chat CENTER -->
                         <div class="chatCenter">
                             <!-- chat -->
-                            <div class="chat">
+                            <section id="sfondoChat">
                                 <img class="imgMine" src="img/mine.jpg" alt="">
-                            </div>
+                                <div class="nuvole">
+                                    <div class="elenco">
+                                        <ul v-if="chats.length > 0">
+                                            <li v-for="(chat, index) in chats">
+                                                {{ chat.title }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
                             <!-- fine chat -->
                         </div>
                         <!-- fine chat CENTER -->
@@ -103,7 +112,8 @@
                             <!-- fine smile -->
                             <!-- write Message -->
                             <div class="writeMessage">
-                                <input type="text" v-model="chat" placeholder=" Scrvi un messaggio" @keyUp.enter="addToDo">
+                                <input type="text" v-model="newChat" placeholder="Scrivi un messaggio" @keyUp.enter="addChat">
+                                <button @click="addChat"> Aggiungi </button>
                             </div>
                             <!-- fine write Message -->
                             <!-- microphone -->

@@ -5,7 +5,13 @@ Vue.config.devtools = true; // scrivere per attivare l'estenzione sul browser
 const app = new Vue({
     el: '#root',
     data: {
-        chat: '',
+        cercaContatti: '',
+        newChat: '',
+        chats: [ //Bonus - Array di Oggetti
+            {title: ' ', done: true},
+            {title: ' ', done: false},
+            {title: ' ', done: true},
+        ],
         photos: [
             'img/avatar_1.jpg',
             'img/avatar_2.jpg',
@@ -94,5 +100,13 @@ const app = new Vue({
                 ],
             },
         ]
-    }    
+    },
+    methods: {
+        addChat() { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
+            if(this.newChat != "") {
+                this.chats.push({title: this.newChat}); // metodo "PUSH"
+                this.newChat="";
+            }
+        },    
+    },
 })
