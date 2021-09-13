@@ -23,12 +23,10 @@
                         <!-- user profile -->
                         <div class="userProfile">
                             <div class="userProfileLeft float-left">
-                                <ul>
-                                    <li>
-                                        <a href="#"> <img src="img/avatar_io.jpg" class="userImg float-left" alt="image io"></a>
-                                        <a href="#"> <h3 class="titleProfile float-left black"> Paolo Dossetto </h3></a>
-                                    </li>
-                                </ul>
+                                <div>
+                                    <img src="img/avatar_io.jpg" class="userImg float-left" alt="image io">
+                                    <h3 class="titleProfile float-left black"> Paolo Dossetto </h3>
+                                </div>
                             </div>
                             <div class="userProfileRight float-left">
                                 <div class="toolsProfile">
@@ -39,28 +37,42 @@
                         <!-- fine user profile -->
                         <!-- notifications -->
                         <div class="notifications">
-                            <ul>
-                                <li>
-                                    <a href="#"> <i class="fas fa-bell-slash bell float-left"></i></a>
-                                    <a href="#"> <h3 class="titleNotifications float-left black"> Ricevi notifiche di nuovi messaggi </h3></a>
-                                    <a href="#"> <h4 class="notificationsDesktop float-left"> Ultimo accesso oggi alle </h4></a>
-                                </li>
-                            </ul>
+                            <div>
+                                <i class="fas fa-bell-slash bell float-left"></i>
+                                <h3 class="titleNotifications float-left black"> Ricevi notifiche di nuovi messaggi </h3>
+                                <h4 class="notificationsDesktop float-left"> Ultimo accesso oggi alle </h4>
+                            </div>
                         </div>
                         <!-- fine notifications -->
                         <!-- search chat -->
                         <div class="searchChat">
-                            <input type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat">
+                            <label for="search" class="search-label"> <i class="fas fa-search"></i></label>
+                            <input class="letf-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat">
                         </div>
                         <!-- fine search chat -->
                         <!-- chat contacts -->
+                        <!-- <div class="chatContacts">
+                            <div v-for="(contact) in contacts" class="contact"> 
+                                <div class="contact-log">
+                                    <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name" class="friendImg">
+                                </div>
+                                <div class="contact-info">
+                                    <h3>
+                                        <span class="contact-name"> {{ contact.name }}</span>
+                                        <span class="time f-right"></span>
+                                    </h3>
+                                    <small></small>
+                                </div>
+                            </div>
+                        </div>  -->
+
                         <div class="chatContacts">
-                            <ul v-if="photos.length > 0">
-                                <li v-for="(contact, index) in contacts" class="titleContacts friendImg black">
-                                    <img :src="photos.length">
+                            <div v-if="photos.length > 0">
+                                <div v-for="(contact, index) in contacts" class="titleContacts friendImg black">
+                                    <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name" class="friendImg">
                                     {{ contact.name }}
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                         <!-- fine chat contacts -->
                     </div>
@@ -69,13 +81,18 @@
                         <div class="chatUp">
                             <!-- user friend -->
                             <div class="userFriend">
-                                <ul>
-                                    <li>
-                                        <a href="#"> <img src="img/avatar_1.jpg" class="userImg float-left" alt="image 1"></a>
-                                        <a href="#"> <h3 class="titleFriend float-left black"> Michele </h3></a>
-                                        <a href="#"> <h4 class="access float-left"> Ultimo accesso oggi alle </h4></a>
-                                    </li>
-                                </ul>
+                                <!-- <div v-if="photos.length > 0">
+                                    <div v-for="(contact, index) in contacts" class="black">
+                                        <img :src="photos[0]" class="userImg titleFriend float-left" alt="image 1">
+                                        {{ contact.name }}
+                                        <h4 class="access float-left"> Ultimo accesso oggi alle </h4>
+                                    </div>
+                                </div> -->
+                                <div>
+                                    <img :src="photos[0]" class="userImg float-left" alt="image 1">
+                                    <h3 class="titleFriend float-left black"> Michele </h3>
+                                    <h4 class="access float-left"> Ultimo accesso oggi alle </h4>
+                                </div>
                             </div>
                             <!-- fine user friend -->
                             <!-- tools -->
@@ -93,9 +110,9 @@
                                 <div class="nuvole">
                                     <div class="elenco">
                                         <ul v-if="chats.length > 0">
-                                            <li v-for="(chat, index) in chats">
+                                            <div v-for="(chat, index) in chats">
                                                 {{ chat.title }}
-                                            </li>
+                                            </div>
                                         </ul>
                                     </div>
                                 </div>
@@ -112,7 +129,7 @@
                             <!-- fine smile -->
                             <!-- write Message -->
                             <div class="writeMessage">
-                                <input type="text" v-model="newChat" placeholder="Scrivi un messaggio" @keyUp.enter="addChat">
+                                <input class="message-input-right" type="text" v-model="newChat" placeholder="Scrivi un messaggio" @keyUp.enter="addChat">
                                 <button @click="addChat"> Aggiungi </button>
                             </div>
                             <!-- fine write Message -->

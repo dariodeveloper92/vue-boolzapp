@@ -86,7 +86,7 @@ body {
     color: gray;
 }
 
-input {
+.message-input-right {
     width: 95%;
     height: 30px;
     border: 1px solid black
@@ -175,6 +175,28 @@ main  {
     background-color: #F6F6F6;
     display: flex;
     justify-content: space-around;
+}
+
+.searchChat .search-label {
+    display: inline-block;
+    width: 15%;
+    border: 1px solid #F5F5F5;
+    border-right: 0;
+    background: #fff;
+    line-height: 36px;
+    text-align: center;
+    color: #868986;
+}
+
+.letf-search-input {
+    display: inline-block;
+    width: 85%;
+    border: 1px solid #F5F5F5;
+    border-right: 0;
+    background: #fff;
+    line-height: 36px;
+    text-align: center;
+    color: #868986;
 }
 
 .chatContacts {
