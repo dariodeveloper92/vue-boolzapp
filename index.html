@@ -46,8 +46,13 @@
                         <!-- fine notifications -->
                         <!-- search chat -->
                         <div class="searchChat">
+                            <!-- <label for="search" class="search-label"> <i class="fas fa-search"></i></label>
+                            <input class="left-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat"> -->
                             <label for="search" class="search-label"> <i class="fas fa-search"></i></label>
-                            <input class="left-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat">
+                            <input class="left-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat" list="browsers" name="browser" id="browser" >
+                            <datalist  v-for="(contact, index) in contacts" @click="selectedContact(index)" id="browsers">
+                                <option :value="contacts[selected_user].name"><!--da MODIFICARE-->
+                            </datalist>
                         </div>
                         <!-- fine search chat -->
                         <!-- chat contacts -->
@@ -68,8 +73,8 @@
                             <!-- user friend -->
                             <div class="userFriend">
                                 <div v-if="selected_user != null"> <!--selected_contact -->
-                                    <img :src="contacts[selected_user].avatar" class="userImg float-left" alt="image 1">
-                                    <span> {{ contacts[selected_user].name }}</span>
+                                    <img :src="'img/avatar' + contacts[selected_user].avatar + '.jpg'" class="userImg float-left" alt="image 1">
+                                    <span class="titleFriend float-left"> {{ contacts[selected_user].name }}</span>
                                     <h4 class="access float-left"> Ultimo accesso oggi alle </h4>
                                 </div>
                             </div>

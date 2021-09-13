@@ -46,6 +46,7 @@ button {
     width: 80%;
     height: 100%;
     padding: 20px 10px;
+    cursor: pointer;
 }
 
 .titleFriend {
@@ -204,6 +205,10 @@ main  {
     color: #868986;
 }
 
+label input .value{
+    text-align: center;
+}
+
 .chatContacts {
     height: 73%;
     width: 100%;
@@ -215,7 +220,7 @@ main  {
     border-radius: 50px;
     background-color: white;
     color: #9DE1FE;
-    font-size: 45px;
+    font-size: 40px;
 }
 /* fine containerHeaderLeft -------------------*/
 
