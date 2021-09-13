@@ -262,6 +262,7 @@ main  {
     width: 100%;
     position: relative;
     overflow-y: scroll;
+    
 }
 
 #sfondoChat .imgMine{
@@ -288,16 +289,16 @@ main  {
 
 /* elenco -------------------*/
 .message_receveid {
-    width: 50%;
-    height: 30px;
+    width: 90%;
+    height: 10%;
     background-color: #FFFFFF;
     border-radius: 5px;    
     padding: 35px;
 }
 
 .message_sent {
-    width: 50%;
-    height: 30px;
+    width: 90%;
+    height: 10%;
     background-color: #DCF8C6;
     border-radius: 5px;    
     padding: 35px;
