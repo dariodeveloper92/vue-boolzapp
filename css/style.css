@@ -182,7 +182,7 @@ main  {
     justify-content: space-around;
 }
 
-.searchChat .search-label {
+.search-label {
     display: inline-block;
     width: 15%;
     border: 1px solid #F5F5F5;
@@ -287,7 +287,7 @@ main  {
 }
 
 /* elenco -------------------*/
-.elenco-left {
+.message_receveid {
     width: 50%;
     height: 30px;
     background-color: #FFFFFF;
@@ -295,7 +295,7 @@ main  {
     padding: 35px;
 }
 
-.elenco-right {
+.message_sent {
     width: 50%;
     height: 30px;
     background-color: #DCF8C6;
@@ -329,6 +329,12 @@ main  {
     justify-content: center;
     padding: 20px 0;
 }
+
+.writeMessage input {
+    height: 100%;
+    width: 100%;
+}
+
 .smile,
 .microphone {
     height: 100%;

@@ -52,12 +52,12 @@
                         <!-- fine search chat -->
                         <!-- chat contacts -->
                         <div class="chatContacts">
-                            <div v-if="photos.length > 0">
-                                <div v-for="(contact, index) in contacts" class="titleContacts friendImg black">
-                                    <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name" class="friendImg">
+                            <ul v-if="photos.length > 0">
+                                <div v-for="(contact, index) in contacts" class="titleContacts black">
+                                    <img :src="'img/avatar' + contact.avatar + '.jpg'" class="friendImg" :alt="contact.name"> 
                                     {{ contact.name }}
                                 </div>
-                            </div>
+                            </ul>
                         </div>
                         <!-- fine chat contacts -->
                     </div>
@@ -67,7 +67,7 @@
                             <!-- user friend -->
                             <div class="userFriend">
                                 <div>
-                                    <img :src="photos[0]" class="userImg float-left" alt="image 1">
+                                    <img src="img/avatar_1.jpg" class="userImg float-left" alt="image 1">
                                     <h3 class="titleFriend float-left black"> Michele </h3>
                                     <h4 class="access float-left"> Ultimo accesso oggi alle </h4>
                                 </div>
@@ -85,22 +85,16 @@
                             <!-- chat -->
                             <section id="sfondoChat">
                                 <img class="imgMine" src="img/mine.jpg" alt="">
-                                <div class="space-chat">
-                                    <div class="nuvole">
-                                        <div class="elenco-left float-left">
-                                            <!-- <ul v-if="messages.length > 0">
-                                                <div v-for="(message, index) in messages">
-                                                    {{ messages.message }}
-                                                </div>
-                                            </ul>  -->
-                                        </div>
-                                        <div class="elenco-right float-left">
-                                            <ul v-if="chats.length > 0">
-                                                <div v-for="(chat, index) in chats">
-                                                    {{ chat.title }}
-                                                </div>
-                                            </ul>
-                                        </div>
+                                <div class="nuvole">
+                                    <div class="message_receveid">
+                                        
+                                    </div>
+                                    <div class="message_sent">
+                                        <ul v-if="chats.length > 0">
+                                            <div v-for="(chat, index) in chats">
+                                                {{ chat.title }}
+                                            </div>
+                                        </ul>
                                     </div>
                                 </div>
                             </section>
@@ -116,7 +110,7 @@
                             <!-- fine smile -->
                             <!-- write Message -->
                             <div class="writeMessage">
-                                <input class="message-input-right" type="text" v-model="newChat" placeholder="Scrivi un messaggio" @keyUp.enter="addChat">
+                                <input type="text" v-model="newChat" placeholder="Scrivi un messaggio" @keyUp.enter="addChat">
                                 <button @click="addChat"> Aggiungi </button>
                             </div>
                             <!-- fine write Message -->

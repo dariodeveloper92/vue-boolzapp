@@ -99,7 +99,9 @@ const app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        selected_user: 0,
+        messages_array: '',
     },
     methods: {
         addChat() { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
@@ -107,6 +109,11 @@ const app = new Vue({
                 this.chats.push({title: this.newChat}); // metodo "PUSH"
                 this.newChat="";
             }
-        },    
+        },
+        selectedContact(index) {   // Cambia contatto
+                this.selected_user = index;
+                this.messages_array = this.contacts[this.selected_user].messages;
+                console.log(this.messages_array);
+        },
     },
 })
