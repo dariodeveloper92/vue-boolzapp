@@ -47,25 +47,10 @@
                         <!-- search chat -->
                         <div class="searchChat">
                             <label for="search" class="search-label"> <i class="fas fa-search"></i></label>
-                            <input class="letf-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat">
+                            <input class="left-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat">
                         </div>
                         <!-- fine search chat -->
                         <!-- chat contacts -->
-                        <!-- <div class="chatContacts">
-                            <div v-for="(contact) in contacts" class="contact"> 
-                                <div class="contact-log">
-                                    <img :src="'img/avatar' + contact.avatar +'.jpg'" :alt="contact.name" class="friendImg">
-                                </div>
-                                <div class="contact-info">
-                                    <h3>
-                                        <span class="contact-name"> {{ contact.name }}</span>
-                                        <span class="time f-right"></span>
-                                    </h3>
-                                    <small></small>
-                                </div>
-                            </div>
-                        </div>  -->
-
                         <div class="chatContacts">
                             <div v-if="photos.length > 0">
                                 <div v-for="(contact, index) in contacts" class="titleContacts friendImg black">
@@ -81,13 +66,6 @@
                         <div class="chatUp">
                             <!-- user friend -->
                             <div class="userFriend">
-                                <!-- <div v-if="photos.length > 0">
-                                    <div v-for="(contact, index) in contacts" class="black">
-                                        <img :src="photos[0]" class="userImg titleFriend float-left" alt="image 1">
-                                        {{ contact.name }}
-                                        <h4 class="access float-left"> Ultimo accesso oggi alle </h4>
-                                    </div>
-                                </div> -->
                                 <div>
                                     <img :src="photos[0]" class="userImg float-left" alt="image 1">
                                     <h3 class="titleFriend float-left black"> Michele </h3>
@@ -107,13 +85,22 @@
                             <!-- chat -->
                             <section id="sfondoChat">
                                 <img class="imgMine" src="img/mine.jpg" alt="">
-                                <div class="nuvole">
-                                    <div class="elenco">
-                                        <ul v-if="chats.length > 0">
-                                            <div v-for="(chat, index) in chats">
-                                                {{ chat.title }}
-                                            </div>
-                                        </ul>
+                                <div class="space-chat">
+                                    <div class="nuvole">
+                                        <div class="elenco-left float-left">
+                                            <!-- <ul v-if="messages.length > 0">
+                                                <div v-for="(message, index) in messages">
+                                                    {{ messages.message }}
+                                                </div>
+                                            </ul>  -->
+                                        </div>
+                                        <div class="elenco-right float-left">
+                                            <ul v-if="chats.length > 0">
+                                                <div v-for="(chat, index) in chats">
+                                                    {{ chat.title }}
+                                                </div>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </section>
