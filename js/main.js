@@ -7,16 +7,6 @@ const app = new Vue({
     data: {
         cercaContatti: '',
         newChat: '',
-        chats: [ //Bonus - Array di Oggetti
-            {
-                date: '10/01/2020 15:30:55',
-                message: '',
-                status: 'sent'
-            },
-            /*{title: ' ', done: true, date: '10/01/2020 15:30:55'},
-            {title: ' ', done: false, date: '10/01/2020 15:30:55'},
-            {title: ' ', done: true, date: '10/01/2020 15:30:55'},*/
-        ],
         photos: [
             'img/avatar_1.jpg',
             'img/avatar_2.jpg',
@@ -107,16 +97,17 @@ const app = new Vue({
         ],
         selected_user: 0,
         messages_array: '',
-    /*mounted() {     //setTimeout - timer
-        setTimeout(  () => {
-            this.addChat();
-        }, 1000);  */  
     },
     methods: {
         addChat(i) { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
             if(this.newChat != "") {
-                this.chats.push({message: this.newChat}); // metodo "PUSH"
+                let tmp = dayjs().format('DD/MM/YYYY hh:m:ss');
+                this.contacts[this.selected_user].messages.push({message: this.newChat, date: tmp, status: 'sent',}); // metodo "PUSH"
                 this.newChat="";
+                let self = this; // VARIABILE GENERICA
+                setTimeout(() => {  //  setTimeout - usato per lanciare messaggio 'ok' dopo che l'utente ha scritto un messaggio in chat
+                    self.contacts[self.selected_user].messages.push({message: 'ok', date: tmp, status: 'received',});
+                }, 3000); // 3 secondi
             }
         },
         selectedContact(index) {   // Cambia contatto

@@ -308,7 +308,7 @@ label input .value{
     justify-content: flex-end;
 }
 /* elenco -------------------*/
-.message_receveid {
+.message_received {
     width: 90%;
     height: 10%;
     background-color: #FFFFFF;

@@ -94,24 +94,12 @@
                             <section id="sfondoChat">
                                 <img class="imgMine" src="img/mine.jpg" alt="">
                                 <div class="nuvole" v-for="(single_message, index) in contacts[selected_user].messages">
-                                    <div class="message_receveid float-left">
+                                    <div :class="'message_' + single_message.status">
                                         <span class="message_text"> {{ single_message.message }} </span>
                                         <i class="fas fa-chevron-down pRight"></i>
                                         <span class="message_time"> {{ single_message.date }} </span>
                                     </div>
-                                    <br>    
-                                    <div class="nuvole" v-for="(chat, index) in chats">      
-                                        <div class="message_sent float-left">
-                                            <span class="message_text"> {{ chat.message }} </span>
-                                            <i class="fas fa-chevron-down pRight"></i>
-                                            <span class="message_time"> {{ chat.date }} </span>
-                                        </div>
-                                    </div>
                                 </div> 
-                                <!-- <div v-for="(message, index) in contacts[selected_user].messages" :src="'getMessageClass(index)">
-                                    <span class="message_text"> {{ single_message.message }} </span>
-                                    <span class="message_time"> {{ single_message.date }} </span>
-                                </div>     -->
                             </section>
                             <!-- fine chat -->
                         </div>
