@@ -52,8 +52,12 @@
                             <input class="left-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat"> -->
                             <label for="search" class="search-label"> <i class="fas fa-search"></i></label>
                             <input class="left-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat" list="browsers" name="browser" id="browser" >
-                            <datalist  v-for="(contact, index) in contacts" @click="selectedContact(index)" id="browsers">
-                                <option :value="contacts[selected_user].name"><!--da MODIFICARE-->
+                            <datalist id="browsers">
+                                <option  value="Michele"></option>
+                                <option  value="Fabio"></option>
+                                <option  value="Samule"></option>
+                                <option  value="Luisa"></option>
+                                <!--<option v-for="(contact, index) in contacts" @click="selectedContact(index)" :value="contacts[selected_user].name"> da MODIFICARE-->
                             </datalist>
                         </div>
                         <!-- fine search chat -->
