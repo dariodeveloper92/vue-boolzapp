@@ -229,7 +229,6 @@ label input .value{
 #containerHeaderRight {
     height: 90vh;
     width: 40%;
-    background-color: red;
     margin: 20px 0;
 }
 
@@ -286,19 +285,30 @@ label input .value{
 
 .nuvole {
     width: 100%;
-    height: 100%;
-    position: absolute;
+    /* height: 100%;
+    position: absolute; */
     object-fit: contain;
     padding: 20px 20px;
 }
 
+.message_text {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.message_time {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
 /* elenco -------------------*/
 .message_receveid {
     width: 90%;
     height: 10%;
     background-color: #FFFFFF;
     border-radius: 5px;    
-    padding: 35px;
+    padding: 10px;
 }
 
 .message_sent {
@@ -306,9 +316,13 @@ label input .value{
     height: 10%;
     background-color: #DCF8C6;
     border-radius: 5px;    
-    padding: 35px;
+    padding: 10px;
 }
 
+.chatCenter, .nuvole, .message_sent, .message_receveid {
+    float: left;
+    clear: both;
+}
 
 .elenco li {
     display: flex;

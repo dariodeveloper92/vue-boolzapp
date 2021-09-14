@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- link icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- link day.js -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <title> BoolZapp </title>
@@ -73,8 +75,8 @@
                             <!-- user friend -->
                             <div class="userFriend">
                                 <div v-if="selected_user != null"> <!--selected_contact -->
-                                    <img :src="'img/avatar' + contacts[selected_user].avatar + '.jpg'" class="userImg float-left" alt="image 1">
-                                    <span class="titleFriend float-left"> {{ contacts[selected_user].name }}</span>
+                                    <h3><img :src="'img/avatar' + contacts[selected_user].avatar + '.jpg'" class="userImg float-left" alt="image 1">
+                                    <span class="titleFriend float-left"> {{ contacts[selected_user].name }}</span></h3>
                                     <h4 class="access float-left"> Ultimo accesso oggi alle </h4>
                                 </div>
                             </div>
@@ -92,17 +94,22 @@
                             <section id="sfondoChat">
                                 <img class="imgMine" src="img/mine.jpg" alt="">
                                 <div class="nuvole" v-for="(single_message, index) in contacts[selected_user].messages">
-                                    <div class="message_receveid">
-                                        {{ single_message.message }}
+                                    <div class="message_receveid float-left">
+                                        <span class="message_text"> {{ single_message.message }} </span>
+                                        <span class="message_time"> {{ single_message.date }} </span>
                                     </div>
-                                    <div class="message_sent">
-                                        <ul v-if="chats.length > 0">
-                                            <div v-for="(chat, index) in chats">
-                                                {{ chat.title }}
-                                            </div>
-                                        </ul>
+                                    <br>    
+                                    <div class="nuvole" v-for="(chat, index) in chats">      
+                                        <div class="message_sent float-left">
+                                            <span class="message_text"> {{ chat.title }} </span>
+                                            <span class="message_time"> {{ chat.date }} </span>
+                                        </div>
                                     </div>
-                                </div>
+                                </div> 
+                                <!-- <div v-for="(message, index) in contacts[selected_user].messages" :src="'getMessageClass(index)">
+                                    <span class="message_text"> {{ single_message.message }} </span>
+                                    <span class="message_time"> {{ single_message.date }} </span>
+                                </div>     -->
                             </section>
                             <!-- fine chat -->
                         </div>
@@ -111,7 +118,7 @@
                         <div class="chatDown">
                             <!-- smile -->
                             <div class="smile">
-                                <div class="strumenti"> <i class="fas fa-smile"></i></div>
+                                <div class="strumenti"> <i class="far fa-smile"></i></div>
                             </div>
                             <!-- fine smile -->
                             <!-- write Message -->

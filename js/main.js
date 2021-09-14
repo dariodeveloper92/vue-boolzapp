@@ -8,9 +8,9 @@ const app = new Vue({
         cercaContatti: '',
         newChat: '',
         chats: [ //Bonus - Array di Oggetti
-            {title: ' ', done: true},
-            {title: ' ', done: false},
-            {title: ' ', done: true},
+            {title: ' ', done: true, date: '10/01/2020 15:30:55'},
+            {title: ' ', done: false, date: '10/01/2020 15:30:55'},
+            {title: ' ', done: true, date: '10/01/2020 15:30:55'},
         ],
         photos: [
             'img/avatar_1.jpg',
@@ -102,9 +102,13 @@ const app = new Vue({
         ],
         selected_user: 0,
         messages_array: '',
+    /*mounted() {     //setTimeout - timer
+        setTimeout(  () => {
+            this.addChat();
+        }, 1000);  */  
     },
     methods: {
-        addChat() { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
+        addChat(i) { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
             if(this.newChat != "") {
                 this.chats.push({title: this.newChat}); // metodo "PUSH"
                 this.newChat="";
@@ -114,6 +118,13 @@ const app = new Vue({
                 this.selected_user = index;
                 this.messages_array = this.contacts[this.selected_user].messages;
                 console.log(this.messages_array);
+                let tmp = dayjs().format('DD/MM/YYYY hh:m:ss');
+                console.log(tmp)
         },
+        /*getMessageClass(index) {
+            let thisContact = this.contacts[this.selected_user];
+            let messageCLass = 'message' + thisContact.messages[index].status;
+            return messageCLass;
+        }*/
     },
 })
