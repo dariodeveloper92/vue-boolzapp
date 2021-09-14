@@ -96,12 +96,14 @@
                                 <div class="nuvole" v-for="(single_message, index) in contacts[selected_user].messages">
                                     <div class="message_receveid float-left">
                                         <span class="message_text"> {{ single_message.message }} </span>
+                                        <i class="fas fa-chevron-down pRight"></i>
                                         <span class="message_time"> {{ single_message.date }} </span>
                                     </div>
                                     <br>    
                                     <div class="nuvole" v-for="(chat, index) in chats">      
                                         <div class="message_sent float-left">
-                                            <span class="message_text"> {{ chat.title }} </span>
+                                            <span class="message_text"> {{ chat.message }} </span>
+                                            <i class="fas fa-chevron-down pRight"></i>
                                             <span class="message_time"> {{ chat.date }} </span>
                                         </div>
                                     </div>
@@ -153,7 +155,5 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- js -->
     <script src="js/main.js"></script>
-    <!-- js contacts -->
-    <script src="js/contacts.js"></script>
 </body>
 </html>

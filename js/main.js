@@ -8,9 +8,14 @@ const app = new Vue({
         cercaContatti: '',
         newChat: '',
         chats: [ //Bonus - Array di Oggetti
-            {title: ' ', done: true, date: '10/01/2020 15:30:55'},
+            {
+                date: '10/01/2020 15:30:55',
+                message: '',
+                status: 'sent'
+            },
+            /*{title: ' ', done: true, date: '10/01/2020 15:30:55'},
             {title: ' ', done: false, date: '10/01/2020 15:30:55'},
-            {title: ' ', done: true, date: '10/01/2020 15:30:55'},
+            {title: ' ', done: true, date: '10/01/2020 15:30:55'},*/
         ],
         photos: [
             'img/avatar_1.jpg',
@@ -110,7 +115,7 @@ const app = new Vue({
     methods: {
         addChat(i) { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
             if(this.newChat != "") {
-                this.chats.push({title: this.newChat}); // metodo "PUSH"
+                this.chats.push({message: this.newChat}); // metodo "PUSH"
                 this.newChat="";
             }
         },
