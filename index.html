@@ -94,13 +94,16 @@
                         <!-- fine chat UP -->
                         <!-- chat CENTER -->
                         <div class="chatCenter">
+                            <img class="imgMine" src="img/mine.jpg" alt="">
                             <!-- chat -->
                             <section id="sfondoChat">
-                                <img class="imgMine" src="img/mine.jpg" alt="">
                                 <div class="nuvole" v-for="(single_message, index) in contacts[selected_user].messages">
                                     <div :class="'message_' + single_message.status">
                                         <span class="message_text"> {{ single_message.message }} </span>
-                                        <i class="fas fa-chevron-down pRight"></i>
+                                        <i class="fas fa-chevron-down chevronTool pRight"></i>
+                                        <div class="dropdown">
+                                            <!-- AGGIUNGERE MENU A TENDINA  -->
+                                        </div>
                                         <span class="message_time"> {{ single_message.date }} </span>
                                     </div>
                                 </div> 

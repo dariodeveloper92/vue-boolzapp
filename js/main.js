@@ -107,7 +107,7 @@ const app = new Vue({
                 let self = this; // VARIABILE GENERICA
                 setTimeout(() => {  //  setTimeout - usato per lanciare messaggio 'ok' dopo che l'utente ha scritto un messaggio in chat
                     self.contacts[self.selected_user].messages.push({message: 'ok', date: tmp, status: 'received',});
-                }, 3000); // 3 secondi
+                }, 1000); // 1 secondi
             }
         },
         selectedContact(index) {   // Cambia contatto

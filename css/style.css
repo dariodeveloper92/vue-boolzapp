@@ -105,6 +105,10 @@ button {
     float: right;
 }
 
+.chevronTool {
+    cursor: pointer;
+}
+
 /*  fine common -----------------*/
 
 /* header -----------------------*/
@@ -262,6 +266,7 @@ label input .value{
 .chatCenter {
     height: 80%;
     width: 100%;
+    position: relative;
     /* background-color: purple; */
 }
 
@@ -273,7 +278,7 @@ label input .value{
     
 }
 
-#sfondoChat .imgMine{
+.chatCenter .imgMine{
     width: 100%;
     height: 100%;
     /* object-fit: cover; */
@@ -282,17 +287,12 @@ label input .value{
     border-radius: 0;
 }
 
-.space-chat {
-    width: 100%;
-    height: 100%;
-}
-
 .nuvole {
     width: 100%;
     /* height: 100%;
     position: absolute; */
     object-fit: contain;
-    padding: 20px 20px;
+    padding: 40px 20px;
 }
 
 .message_text {
@@ -314,6 +314,7 @@ label input .value{
     background-color: #FFFFFF;
     border-radius: 5px;    
     padding: 10px;
+    float: left;
 }
 
 .message_sent {
@@ -322,19 +323,13 @@ label input .value{
     background-color: #DCF8C6;
     border-radius: 5px;    
     padding: 10px;
-}
+    float: right;
+}/*modificato aggiungere PADDING*/
 
-.chatCenter, .nuvole, .message_sent, .message_receveid {
-    float: left;
+/.chatCenter, .nuvole, .message_sent, .message_receveid {
+    /* float: left; */
     clear: both;
-}
-
-.elenco li {
-    display: flex;
-    justify-content:space-between;
-    padding: 5px;
-}
-
+} 
 /* fine chat center ----------*/
 
 /* chat down ----------------*/
