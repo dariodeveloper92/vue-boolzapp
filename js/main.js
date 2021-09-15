@@ -100,7 +100,7 @@ const app = new Vue({
     },
     methods: {
         addChat(index) { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
-            if(this.newChat != "") {
+            if(this.newChat != '') {
                 let tmp = dayjs().format('DD/MM/YYYY hh:m:ss');
                 let thisContact = this.contacts[this.selected_user];    // VARIABILE GENERICA 'thisContact'
                 thisContact.messages.push({message: this.newChat, date: tmp, status: 'sent',}); // metodo "PUSH"
