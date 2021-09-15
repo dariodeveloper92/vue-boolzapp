@@ -72,7 +72,7 @@
                                 <div v-if="selected_user != null"> <!--selected_contact -->
                                     <h3><img :src="'img/avatar' + contacts[selected_user].avatar + '.jpg'" class="userImg float-left" alt="image 1">
                                     <span class="titleFriend float-left"> {{ contacts[selected_user].name }}</span></h3>
-                                    <h4 class="access float-left"> Ultimo accesso oggi alle </h4>
+                                    <h4 class="access float-left"> Ultimo accesso oggi alle 10/01/2020 15:30:55</h4>
                                 </div>
                             </div>
                             <!-- fine user friend -->
@@ -93,10 +93,11 @@
                                         <span class="message_text"> {{ single_message.message }} </span>
                                         <i class="fas fa-chevron-down chevronTool pRight"></i>
                                             <!-- AGGIUNGERE MENU A TENDINA  -->
-                                            <datalist>
-                                                <option value="message info"> Message info </option>
-                                                <option value="Delete"> Delete </option>
-                                            </datalist>
+                                            <!-- <label for="sel1"></label>
+                                            <datalist class="form-control" id="sel1">
+                                                <option value="message info">Message info</option>
+                                                <option value="Delete">Delete</option>
+                                            </datalist> -->
                                         <span class="message_time"> {{ single_message.date }} </span>
                                     </div>
                                 </div> 

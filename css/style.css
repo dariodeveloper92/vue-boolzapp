@@ -74,7 +74,7 @@ button {
 
 .access {
     color: gray;
-    width: 60%;
+    width: 80%;
     height: 100%;
     padding: 0 15px;
 }
@@ -109,6 +109,11 @@ button {
 
 .chevronTool {
     cursor: pointer;
+    display: none;
+}
+
+.nuvole:hover .chevronTool {
+    display: inline;
 }
 
 /*  fine common -----------------*/
