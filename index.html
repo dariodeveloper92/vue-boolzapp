@@ -27,7 +27,7 @@
                             <div class="userProfileLeft float-left">
                                 <div>
                                     <img src="img/avatar_io.jpg" class="userImg float-left" alt="image io">
-                                    <h3 class="titleProfile float-left black"> Paolo Dossetto </h3>
+                                    <h3 class="titleProfile float-left black"> Evan You </h3>
                                 </div>
                             </div>
                             <div class="userProfileRight float-left">
@@ -49,18 +49,14 @@
                         <!-- search chat -->
                         <div class="searchChat">
                             <label for="search" class="search-label"> <i class="fas fa-search"></i></label>
-                            <input class="left-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat" list="browsers" name="browser" id="browser" >
-                            <datalist id="browsers"> <!--MODIFICARE CONTACTS SEARCH -->
-                                 <option v-for="(contact, index) in contacts" @click="includeContact(index)" :value="contacts[selected_user].name">
-                                    {{ contact.name }} 
-                            </datalist>
+                            <input class="left-search-input" type="text" v-model="cercaContatti" placeholder=" Cerca o inizia una nuova chat">
                         </div>
                         <!-- fine search chat -->
                         <!-- chat contacts -->
                         <div class="chatContacts">
                             <ul v-if="photos.length > 0">
-                                <div v-for="(contact, index) in contacts" class="titleContacts black" @click="selectedContact(index)">
-                                    <img :src="'img/avatar' + contact.avatar + '.jpg'" class="friendImg" :alt="contact.name"> 
+                                <div v-for="(contact, index) in filterContact()" class="titleContacts black" @click="selectedContact(index)"> <!--metodo filterContact()-->
+                                    <img :src="'img/avatar' + contact.avatar + '.jpg'" class="friendImg" :alt="contact.name"> <!--template literals-->
                                     {{ contact.name }}
                                 </div>
                             </ul>
@@ -96,9 +92,11 @@
                                     <div :class="'message_' + single_message.status">
                                         <span class="message_text"> {{ single_message.message }} </span>
                                         <i class="fas fa-chevron-down chevronTool pRight"></i>
-                                        <div class="dropdown">
                                             <!-- AGGIUNGERE MENU A TENDINA  -->
-                                        </div>
+                                            <datalist>
+                                                <option value="message info"> Message info </option>
+                                                <option value="Delete"> Delete </option>
+                                            </datalist>
                                         <span class="message_time"> {{ single_message.date }} </span>
                                     </div>
                                 </div> 

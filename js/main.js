@@ -5,15 +5,15 @@ Vue.config.devtools = true; // scrivere per attivare l'estenzione sul browser
 const app = new Vue({
     el: '#root',
     data: {
-        cercaContatti: '',
-        newChat: '',
-        photos: [
+        cercaContatti: '',  //stringa
+        newChat: '',    //stringa
+        photos: [   //Array
             'img/avatar_1.jpg',
             'img/avatar_2.jpg',
             'img/avatar_3.jpg',
             'img/avatar_4.jpg',
         ],
-        contacts: [
+        contacts: [ //Array di oggetti
             {
                 name: 'Michele',
                 avatar: '_1',
@@ -101,7 +101,6 @@ const app = new Vue({
     methods: {
         addChat(index) { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
             if(this.newChat != '') {
-                // variabili:
                 let tmp = dayjs().format('DD/MM/YYYY hh:m:ss'); // variabile data
                 let thisContact = this.contacts[this.selected_user];    // VARIABILE GENERICA 'thisContact'
 
@@ -114,26 +113,18 @@ const app = new Vue({
                 }, 1000); // 1 secondi
             }
         },
-        includeContact(index) {
-            let thisContact = this.contacts[this.selected_user];
-            
-            thisContact.forEach(element => {
-            thisContact.include({
-                name: '',
-                avatar: '',
-                visible: true,
-                date: tmp,})
-            })
+        filterContact() { // Filtro l'Array di oggetti 'contacts'
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.cercaContatti.toLowerCase())) //ritornami l'Array di oggetti 'contacts' filtrato (con 'name' minuscolo e che 'includa' la stringa vuota 'cercaContatti' anche minuscolo)       
         },
         selectedContact(index) {   // Cambia contatto
-                this.selected_user = index;
-                let thisContact = this.contacts[this.selected_user];
-                this.messages_array = thisContact.messages;
-                console.log(this.messages_array);
+            this.selected_user = index;
+            let thisContact = this.contacts[this.selected_user];    // VARIABILE GENERICA 'thisContact'
+            this.messages_array = thisContact.messages;
+            console.log(this.messages_array);
 
-                // variabile data
-                let tmp = dayjs().format('DD/MM/YYYY hh:m:ss');
-                console.log(tmp)
+            // variabile data
+            let tmp = dayjs().format('DD/MM/YYYY hh:m:ss'); // variabile data
+            console.log(tmp)
         },
     },
 })
