@@ -99,28 +99,26 @@ const app = new Vue({
         messages_array: '',
     },
     methods: {
-        addChat(i) { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
+        addChat(index) { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
             if(this.newChat != "") {
                 let tmp = dayjs().format('DD/MM/YYYY hh:m:ss');
-                this.contacts[this.selected_user].messages.push({message: this.newChat, date: tmp, status: 'sent',}); // metodo "PUSH"
-                this.newChat="";
-                let self = this; // VARIABILE GENERICA
+                let thisContact = this.contacts[this.selected_user];    // VARIABILE GENERICA 'thisContact'
+                thisContact.messages.push({message: this.newChat, date: tmp, status: 'sent',}); // metodo "PUSH"
+                
+                this.newChat ='';
+                
                 setTimeout(() => {  //  setTimeout - usato per lanciare messaggio 'ok' dopo che l'utente ha scritto un messaggio in chat
-                    self.contacts[self.selected_user].messages.push({message: 'ok', date: tmp, status: 'received',});
+                    thisContact.messages.push({message: 'ok', date: tmp, status: 'received',});
                 }, 1000); // 1 secondi
             }
         },
         selectedContact(index) {   // Cambia contatto
                 this.selected_user = index;
-                this.messages_array = this.contacts[this.selected_user].messages;
+                let thisContact = this.contacts[this.selected_user];
+                this.messages_array = thisContact.messages;
                 console.log(this.messages_array);
                 let tmp = dayjs().format('DD/MM/YYYY hh:m:ss');
                 console.log(tmp)
         },
-        /*getMessageClass(index) {
-            let thisContact = this.contacts[this.selected_user];
-            let messageCLass = 'message' + thisContact.messages[index].status;
-            return messageCLass;
-        }*/
     },
 })
