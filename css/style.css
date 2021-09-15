@@ -240,7 +240,6 @@ label input .value{
 /* fine containerHeaderLeft -------------------*/
 
 /* containerHeaderRight -----------------------*/
-
 #containerHeaderRight {
     height: 90vh;
     width: 50%;
@@ -274,7 +273,6 @@ label input .value{
     height: 80%;
     width: 100%;
     position: relative;
-    /* background-color: purple; */
 }
 
 #sfondoChat {
@@ -331,10 +329,9 @@ label input .value{
     border-radius: 5px;    
     padding: 10px;
     float: right;
-}/*modificato aggiungere PADDING*/
+}
 
-/.chatCenter, .nuvole, .message_sent, .message_receveid {
-    /* float: left; */
+.chatCenter, .nuvole, .message_sent, .message_receveid {
     clear: both;
 } 
 /* fine chat center ----------*/
