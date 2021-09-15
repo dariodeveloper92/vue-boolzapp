@@ -101,8 +101,10 @@ const app = new Vue({
     methods: {
         addChat(index) { //clicca il button aggiungi: stampare in pagina un item per ogni elemento contenuto in un array
             if(this.newChat != '') {
-                let tmp = dayjs().format('DD/MM/YYYY hh:m:ss');
+                // variabili:
+                let tmp = dayjs().format('DD/MM/YYYY hh:m:ss'); // variabile data
                 let thisContact = this.contacts[this.selected_user];    // VARIABILE GENERICA 'thisContact'
+
                 thisContact.messages.push({message: this.newChat, date: tmp, status: 'sent',}); // metodo "PUSH"
                 
                 this.newChat ='';
@@ -112,11 +114,24 @@ const app = new Vue({
                 }, 1000); // 1 secondi
             }
         },
+        includeContact(index) {
+            let thisContact = this.contacts[this.selected_user];
+            
+            thisContact.forEach(element => {
+            thisContact.include({
+                name: '',
+                avatar: '',
+                visible: true,
+                date: tmp,})
+            })
+        },
         selectedContact(index) {   // Cambia contatto
                 this.selected_user = index;
                 let thisContact = this.contacts[this.selected_user];
                 this.messages_array = thisContact.messages;
                 console.log(this.messages_array);
+
+                // variabile data
                 let tmp = dayjs().format('DD/MM/YYYY hh:m:ss');
                 console.log(tmp)
         },

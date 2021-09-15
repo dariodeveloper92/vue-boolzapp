@@ -90,6 +90,7 @@ button {
     width: 100%;
     padding: 20px 0;
     color: gray;
+    font-size: 20px;
 }
 
 .message-input-right {
